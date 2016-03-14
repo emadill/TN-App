@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200F791C1C94A6C600AAA378 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F791B1C94A6C600AAA378 /* HomeViewController.swift */; };
+		200F791E1C94A87B00AAA378 /* GetHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F791D1C94A87B00AAA378 /* GetHelpViewController.swift */; };
 		2027423E1C90FC5000BFA98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027423D1C90FC5000BFA98B /* AppDelegate.swift */; };
-		202742401C90FC5000BFA98B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027423F1C90FC5000BFA98B /* FirstViewController.swift */; };
-		202742421C90FC5000BFA98B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202742411C90FC5000BFA98B /* SecondViewController.swift */; };
 		202742451C90FC5000BFA98B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202742431C90FC5000BFA98B /* Main.storyboard */; };
 		202742471C90FC5000BFA98B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202742461C90FC5000BFA98B /* Assets.xcassets */; };
 		2027424A1C90FC5000BFA98B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202742481C90FC5000BFA98B /* LaunchScreen.storyboard */; };
 		202742551C90FC5000BFA98B /* TN_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202742541C90FC5000BFA98B /* TN_AppTests.swift */; };
 		202742601C90FC5000BFA98B /* TN_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027425F1C90FC5000BFA98B /* TN_AppUITests.swift */; };
+		2027426E1C90FFFA00BFA98B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */; };
+		208F79EA1C93B872009383D7 /* painScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79E91C93B872009383D7 /* painScoreCell.swift */; };
+		208F79EC1C93B9FC009383D7 /* painScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79EB1C93B9FC009383D7 /* painScoreTableViewCell.swift */; };
+		208F79EE1C93BC7F009383D7 /* painScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79ED1C93BC7F009383D7 /* painScoreTableViewController.swift */; };
+		20FB99541C95001300F032A2 /* painLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FB99531C95001300F032A2 /* painLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200F791B1C94A6C600AAA378 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
+		200F791D1C94A87B00AAA378 /* GetHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHelpViewController.swift; sourceTree = "<group>"; };
 		2027423A1C90FC5000BFA98B /* TN App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TN App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2027423D1C90FC5000BFA98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2027423F1C90FC5000BFA98B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		202742411C90FC5000BFA98B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		202742441C90FC5000BFA98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		202742461C90FC5000BFA98B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202742491C90FC5000BFA98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		2027425B1C90FC5000BFA98B /* TN AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TN AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2027425F1C90FC5000BFA98B /* TN_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TN_AppUITests.swift; sourceTree = "<group>"; };
 		202742611C90FC5000BFA98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		208F79E91C93B872009383D7 /* painScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreCell.swift; sourceTree = "<group>"; };
+		208F79EB1C93B9FC009383D7 /* painScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreTableViewCell.swift; sourceTree = "<group>"; };
+		208F79ED1C93BC7F009383D7 /* painScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreTableViewController.swift; sourceTree = "<group>"; };
+		20FB99531C95001300F032A2 /* painLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +110,14 @@
 			isa = PBXGroup;
 			children = (
 				2027423D1C90FC5000BFA98B /* AppDelegate.swift */,
-				2027423F1C90FC5000BFA98B /* FirstViewController.swift */,
-				202742411C90FC5000BFA98B /* SecondViewController.swift */,
+				200F791B1C94A6C600AAA378 /* HomeViewController.swift */,
+				200F791D1C94A87B00AAA378 /* GetHelpViewController.swift */,
+				2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */,
 				202742431C90FC5000BFA98B /* Main.storyboard */,
+				20FB99531C95001300F032A2 /* painLocationViewController.swift */,
+				208F79ED1C93BC7F009383D7 /* painScoreTableViewController.swift */,
+				208F79EB1C93B9FC009383D7 /* painScoreTableViewCell.swift */,
+				208F79E91C93B872009383D7 /* painScoreCell.swift */,
 				202742461C90FC5000BFA98B /* Assets.xcassets */,
 				202742481C90FC5000BFA98B /* LaunchScreen.storyboard */,
 				2027424B1C90FC5000BFA98B /* Info.plist */,
@@ -259,9 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202742421C90FC5000BFA98B /* SecondViewController.swift in Sources */,
+				208F79EC1C93B9FC009383D7 /* painScoreTableViewCell.swift in Sources */,
+				2027426E1C90FFFA00BFA98B /* TabBarViewController.swift in Sources */,
+				200F791C1C94A6C600AAA378 /* HomeViewController.swift in Sources */,
 				2027423E1C90FC5000BFA98B /* AppDelegate.swift in Sources */,
-				202742401C90FC5000BFA98B /* FirstViewController.swift in Sources */,
+				208F79EE1C93BC7F009383D7 /* painScoreTableViewController.swift in Sources */,
+				200F791E1C94A87B00AAA378 /* GetHelpViewController.swift in Sources */,
+				20FB99541C95001300F032A2 /* painLocationViewController.swift in Sources */,
+				208F79EA1C93B872009383D7 /* painScoreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +506,7 @@
 				202742661C90FC5000BFA98B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		202742671C90FC5000BFA98B /* Build configuration list for PBXNativeTarget "TN AppTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +515,7 @@
 				202742691C90FC5000BFA98B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2027426A1C90FC5000BFA98B /* Build configuration list for PBXNativeTarget "TN AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +524,7 @@
 				2027426C1C90FC5000BFA98B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
