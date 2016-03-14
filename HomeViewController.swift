@@ -13,6 +13,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var checkHistoryButtonStyle: UIButton!
+    @IBOutlet weak var TNShareButtonStyle: UIButton!
     @IBOutlet weak var homeScrollView: UIScrollView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var chartLabel: UILabel!
@@ -37,6 +38,8 @@ class HomeViewController: UIViewController {
         
         checkHistoryButtonStyle.layer.cornerRadius = 5.0
         checkHistoryButtonStyle.clipsToBounds = true
+        TNShareButtonStyle.layer.cornerRadius = 5.0
+        TNShareButtonStyle.clipsToBounds = true
         
     }
 
@@ -45,6 +48,11 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func TNShareButtonAction(sender: AnyObject) {
+        if let connectURL = NSURL(string: "https://www.google.com/#q=trigeminal+neuralgia+support+network") {
+            UIApplication.sharedApplication().openURL(connectURL)
+        }
+    }
 
     /*
     // MARK: - Navigation

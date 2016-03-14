@@ -59,7 +59,7 @@ class GetHelpViewController: UIViewController {
     }
 
     @IBAction func callContactButtonAction(sender: AnyObject) {
-        if let contactNumber = NSURL(string: "tel://3603935365") {
+        if let contactNumber = NSURL(string: "tel://5555555555") {
             UIApplication.sharedApplication().openURL(contactNumber)
         }
     }

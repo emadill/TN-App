@@ -16,6 +16,7 @@
 		202742551C90FC5000BFA98B /* TN_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202742541C90FC5000BFA98B /* TN_AppTests.swift */; };
 		202742601C90FC5000BFA98B /* TN_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027425F1C90FC5000BFA98B /* TN_AppUITests.swift */; };
 		2027426E1C90FFFA00BFA98B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */; };
+		204C548F1C973E5300799F81 /* historyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C548E1C973E5300799F81 /* historyTableViewController.swift */; };
 		208F79EA1C93B872009383D7 /* painScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79E91C93B872009383D7 /* painScoreCell.swift */; };
 		208F79EC1C93B9FC009383D7 /* painScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79EB1C93B9FC009383D7 /* painScoreTableViewCell.swift */; };
 		208F79EE1C93BC7F009383D7 /* painScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79ED1C93BC7F009383D7 /* painScoreTableViewController.swift */; };
@@ -55,6 +56,7 @@
 		2027425F1C90FC5000BFA98B /* TN_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TN_AppUITests.swift; sourceTree = "<group>"; };
 		202742611C90FC5000BFA98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		204C548E1C973E5300799F81 /* historyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyTableViewController.swift; sourceTree = "<group>"; };
 		208F79E91C93B872009383D7 /* painScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreCell.swift; sourceTree = "<group>"; };
 		208F79EB1C93B9FC009383D7 /* painScoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreTableViewCell.swift; sourceTree = "<group>"; };
 		208F79ED1C93BC7F009383D7 /* painScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreTableViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				200F791D1C94A87B00AAA378 /* GetHelpViewController.swift */,
 				2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */,
 				202742431C90FC5000BFA98B /* Main.storyboard */,
+				204C548E1C973E5300799F81 /* historyTableViewController.swift */,
 				20FB99531C95001300F032A2 /* painLocationViewController.swift */,
 				208F79ED1C93BC7F009383D7 /* painScoreTableViewController.swift */,
 				208F79EB1C93B9FC009383D7 /* painScoreTableViewCell.swift */,
@@ -278,6 +281,7 @@
 				2027426E1C90FFFA00BFA98B /* TabBarViewController.swift in Sources */,
 				200F791C1C94A6C600AAA378 /* HomeViewController.swift in Sources */,
 				2027423E1C90FC5000BFA98B /* AppDelegate.swift in Sources */,
+				204C548F1C973E5300799F81 /* historyTableViewController.swift in Sources */,
 				208F79EE1C93BC7F009383D7 /* painScoreTableViewController.swift in Sources */,
 				200F791E1C94A87B00AAA378 /* GetHelpViewController.swift in Sources */,
 				20FB99541C95001300F032A2 /* painLocationViewController.swift in Sources */,
