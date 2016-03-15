@@ -49,7 +49,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func TNShareButtonAction(sender: AnyObject) {
-        if let connectURL = NSURL(string: "https://www.google.com/#q=trigeminal+neuralgia+support+network") {
+        if let connectURL = NSURL(string: "http://fpa-support.org/find-help/") {
             UIApplication.sharedApplication().openURL(connectURL)
         }
     }

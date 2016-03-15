@@ -49,7 +49,7 @@ class GetHelpViewController: UIViewController {
     @IBAction func findProviderButtonAction(sender: AnyObject) {
         // Be sure to include http(s)
         // Safely unwrap optional?
-        if let searchURL = NSURL(string: "https://www.google.com/#q=trigeminal+neuralgia") {
+        if let searchURL = NSURL(string: "http://fpa-support.org/healthcare-providers/") {
             UIApplication.sharedApplication().openURL(searchURL)
         }
     }

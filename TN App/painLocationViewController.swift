@@ -15,9 +15,6 @@ class painLocationViewController: UIViewController {
     @IBOutlet weak var backgroundLabelZone2: UILabel!
     @IBOutlet weak var backgroundLabelZone3: UILabel!
     @IBOutlet weak var painLocationImage: UIImageView!
-    @IBOutlet weak var zone1Label: UILabel!
-    @IBOutlet weak var zone2Label: UILabel!
-    @IBOutlet weak var zone3Label: UILabel!
     @IBOutlet weak var switch1Label: UISwitch!
     @IBOutlet weak var switch2Label: UISwitch!
     @IBOutlet weak var switch3Label: UISwitch!
@@ -31,20 +28,12 @@ class painLocationViewController: UIViewController {
         
         // Set navbar title
         self.navigationItem.title = "Location"
-
-        labelsToBeStyled.append(zone1Label)
-        labelsToBeStyled.append(zone2Label)
-        labelsToBeStyled.append(zone3Label)
         
         backgroundLabelsToBeStyled.append(backgroundLabel)
         backgroundLabelsToBeStyled.append(backgroundLabelZone1)
         backgroundLabelsToBeStyled.append(backgroundLabelZone2)
         backgroundLabelsToBeStyled.append(backgroundLabelZone3)
         
-        for label in labelsToBeStyled {
-            label.layer.cornerRadius = 10.0
-            label.clipsToBounds = true
-        }
         for label in backgroundLabelsToBeStyled {
             label.layer.cornerRadius = 5.0
             label.clipsToBounds = true
