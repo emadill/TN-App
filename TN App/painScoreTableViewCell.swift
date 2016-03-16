@@ -16,7 +16,9 @@ class painScoreTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        scoreImage.layer.cornerRadius = 5.0
+        scoreImage.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

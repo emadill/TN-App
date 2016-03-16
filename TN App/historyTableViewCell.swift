@@ -18,7 +18,9 @@ class historyTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        historyImageview.layer.cornerRadius = 5.0
+        historyImageview.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
