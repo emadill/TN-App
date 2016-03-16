@@ -114,12 +114,16 @@ class historyTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editHistorySegue" {
-            let vcToBePresented = segue.destinationViewController as! editHistoryViewController
+            // editHistoryViewController is embedded in a navigation controller not part of historyTableViewController
+            let navControl = segue.destinationViewController as! UINavigationController
+            let vcToBePresented = navControl.viewControllers[0] as! editHistoryViewController
             if let selectedHistoryCell = sender as? historyTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedHistoryCell)!
                 let historyCellToBeEdited = sampleDataset[indexPath.row]
                 // Labels not yet initialized in editHistoryViewController
                 // Have to pass data to temp variables not displayed in view
+                // Careful with forcing to Int. May have to clean this up later and wrap in if statement
+                vcToBePresented.adjustpainscoreinitialvalue = Double(historyCellToBeEdited.historyScoreString)!
                 vcToBePresented.painscorestringtemp = "Pain: " + historyCellToBeEdited.historyScoreString
                 vcToBePresented.datetimestringtemp = "Pain: " + historyCellToBeEdited.historyTimestampString
             }
