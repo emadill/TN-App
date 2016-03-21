@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class historyTableViewController: UITableViewController {
     
     //MARK: Properties
     var sampleDataset = [historyScoreCell]()
+    var painScoreHistory_CD = [NSManagedObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,27 @@ class historyTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // getHistoryData()
+    }
+    
+    // Get data from DB
+    func getHistoryData() {
+        let appDelegate_CD = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context_CD = appDelegate_CD.managedObjectContext
+        
+        let fetchRequest_CD = NSFetchRequest(entityName: "PainHistory")
+        do {
+            let historyResults = try context_CD.executeFetchRequest(fetchRequest_CD)
+            painScoreHistory_CD = historyResults as! [NSManagedObject]
+            
+        } catch let error as NSError {
+            print("Could not get records \(error)")
+        }
     }
     
     func loadSampleDataset() {
@@ -72,7 +95,10 @@ class historyTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "View or edit your history here"
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -117,6 +143,7 @@ class historyTableViewController: UITableViewController {
             // editHistoryViewController is embedded in a navigation controller not part of historyTableViewController
             let navControl = segue.destinationViewController as! UINavigationController
             let vcToBePresented = navControl.viewControllers[0] as! editHistoryViewController
+            
             if let selectedHistoryCell = sender as? historyTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedHistoryCell)!
                 let historyCellToBeEdited = sampleDataset[indexPath.row]

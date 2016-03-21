@@ -67,14 +67,11 @@ class editHistoryViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func saveButtonAction(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     // MARK: - Navigation
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if saveButton === sender {
-            
-        }
-    }
     
 
 }

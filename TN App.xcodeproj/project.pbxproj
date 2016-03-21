@@ -24,6 +24,9 @@
 		208F79EE1C93BC7F009383D7 /* painScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79ED1C93BC7F009383D7 /* painScoreTableViewController.swift */; };
 		20C165F51C9789EA005EEC5A /* ConnectWProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165F41C9789EA005EEC5A /* ConnectWProviderViewController.swift */; };
 		20DAA4591C99CC1D00DC7C62 /* editHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DAA4581C99CC1D00DC7C62 /* editHistoryViewController.swift */; };
+		20E54F9C1C9CA08F00EBD555 /* TN App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20E54F9A1C9CA08F00EBD555 /* TN App.xcdatamodeld */; };
+		20EE99131C9E61DB000F8425 /* PainHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE99111C9E61DB000F8425 /* PainHistory+CoreDataProperties.swift */; };
+		20EE99141C9E61DB000F8425 /* PainHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE99121C9E61DB000F8425 /* PainHistory.swift */; };
 		20FB99541C95001300F032A2 /* painLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FB99531C95001300F032A2 /* painLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,9 @@
 		208F79ED1C93BC7F009383D7 /* painScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreTableViewController.swift; sourceTree = "<group>"; };
 		20C165F41C9789EA005EEC5A /* ConnectWProviderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectWProviderViewController.swift; sourceTree = "<group>"; };
 		20DAA4581C99CC1D00DC7C62 /* editHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editHistoryViewController.swift; sourceTree = "<group>"; };
+		20E54F9B1C9CA08F00EBD555 /* TN App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TN App.xcdatamodel"; sourceTree = "<group>"; };
+		20EE99111C9E61DB000F8425 /* PainHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PainHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		20EE99121C9E61DB000F8425 /* PainHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PainHistory.swift; sourceTree = "<group>"; };
 		20FB99531C95001300F032A2 /* painLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +105,8 @@
 		202742311C90FC5000BFA98B = {
 			isa = PBXGroup;
 			children = (
+				20EE99111C9E61DB000F8425 /* PainHistory+CoreDataProperties.swift */,
+				20EE99121C9E61DB000F8425 /* PainHistory.swift */,
 				2027423C1C90FC5000BFA98B /* TN App */,
 				202742531C90FC5000BFA98B /* TN AppTests */,
 				2027425E1C90FC5000BFA98B /* TN AppUITests */,
@@ -136,6 +144,7 @@
 				202742461C90FC5000BFA98B /* Assets.xcassets */,
 				202742481C90FC5000BFA98B /* LaunchScreen.storyboard */,
 				2027424B1C90FC5000BFA98B /* Info.plist */,
+				20E54F9A1C9CA08F00EBD555 /* TN App.xcdatamodeld */,
 			);
 			path = "TN App";
 			sourceTree = "<group>";
@@ -291,8 +300,11 @@
 			files = (
 				208F79EC1C93B9FC009383D7 /* painScoreTableViewCell.swift in Sources */,
 				2027426E1C90FFFA00BFA98B /* TabBarViewController.swift in Sources */,
+				20E54F9C1C9CA08F00EBD555 /* TN App.xcdatamodeld in Sources */,
 				200F791C1C94A6C600AAA378 /* HomeViewController.swift in Sources */,
 				2027423E1C90FC5000BFA98B /* AppDelegate.swift in Sources */,
+				20EE99131C9E61DB000F8425 /* PainHistory+CoreDataProperties.swift in Sources */,
+				20EE99141C9E61DB000F8425 /* PainHistory.swift in Sources */,
 				204C548F1C973E5300799F81 /* historyTableViewController.swift in Sources */,
 				208F79EE1C93BC7F009383D7 /* painScoreTableViewController.swift in Sources */,
 				20DAA4591C99CC1D00DC7C62 /* editHistoryViewController.swift in Sources */,
@@ -441,10 +453,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TN App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TN.TN-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -452,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TN App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TN.TN-App";
@@ -547,6 +562,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		20E54F9A1C9CA08F00EBD555 /* TN App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				20E54F9B1C9CA08F00EBD555 /* TN App.xcdatamodel */,
+			);
+			currentVersion = 20E54F9B1C9CA08F00EBD555 /* TN App.xcdatamodel */;
+			path = "TN App.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 202742321C90FC5000BFA98B /* Project object */;
 }

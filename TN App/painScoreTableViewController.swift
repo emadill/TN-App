@@ -18,16 +18,15 @@ class painScoreTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadScoreScale()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     // MARK: - Table view data source
 
@@ -101,16 +100,17 @@ class painScoreTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         // Get the new view controller
         if segue.identifier == "showPainLocationSegue" {
-            let locationDetailViewController = segue.destinationViewController as! painLocationViewController
+            let navControl = segue.destinationViewController as! UINavigationController
+            let locationDetailViewController = navControl.viewControllers[0] as! painLocationViewController
             
             // Get the cell that was clicked
             if let selectedScoreCell = sender as? painScoreTableViewCell {
                 // Console printing score from selected cell -- have to unwrap optional
-                // print(selectedScoreCell.scoreLabel.text!)
+                // pass data to be saved to next view controller
                 let recordedPainScore = selectedScoreCell.scoreLabel.text!
+                locationDetailViewController.recordedPainScore = Int(recordedPainScore)!
             }
         }
     }

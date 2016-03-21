@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class painLocationViewController: UIViewController {
 
@@ -21,6 +22,10 @@ class painLocationViewController: UIViewController {
     
     var labelsToBeStyled = [UILabel]()
     var backgroundLabelsToBeStyled = [UILabel]()
+    var painScoreEntries_CD = [NSManagedObject]()
+    
+    var timestamp: NSDate = NSDate()
+    var recordedPainScore: Int = 0
     
     
     override func viewDidLoad() {
@@ -48,7 +53,41 @@ class painLocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Function to add pain score to core data
+    func logPainScore() {
+        let appDelegate_CD = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context_CD = appDelegate_CD.managedObjectContext
+        
+        let entity_CD = NSEntityDescription.entityForName("PainHistory", inManagedObjectContext: context_CD)
+        let painEntry_CD = NSManagedObject(entity: entity_CD!, insertIntoManagedObjectContext: context_CD)
+        
+        // Assign values
+        let timestamp = NSDate()
+        painEntry_CD.setValue(recordedPainScore, forKey: "painScore_CD")
+        painEntry_CD.setValue(timestamp, forKey: "timestamp_CD")
+        
+        // Check output
+        print(recordedPainScore)
+        print(timestamp)
+        
+        // Save to core data
+        do {
+            try context_CD.save()
+            painScoreEntries_CD.append(painEntry_CD)
+        } catch let error as NSError {
+            print("Could not save \(error)")
+        }
+        
+    }
+    
+    @IBAction func cancelButtonAction(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
+    @IBAction func saveButtonAction(sender: AnyObject) {
+        logPainScore()
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
