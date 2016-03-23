@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class editHistoryViewController: UIViewController {
     //MARK: Properties
@@ -23,8 +24,10 @@ class editHistoryViewController: UIViewController {
     var painscorestringtemp: String = ""
     var datetimestringtemp: String = ""
     var adjustpainscoreinitialvalue: Double = 0
+    var editedPainScore: Int = 0
     
     var labelsToBeStyled = [UILabel]()
+    var painScoreEntries_CD = [NSManagedObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +61,32 @@ class editHistoryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func logPainScore() {
+        let appDelegate_CD = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context_CD = appDelegate_CD.managedObjectContext
+        
+        let entity_CD = NSEntityDescription.entityForName("PainHistory", inManagedObjectContext: context_CD)
+        let painEntry_CD = NSManagedObject(entity: entity_CD!, insertIntoManagedObjectContext: context_CD)
+        
+        // Assign values
+        painEntry_CD.setValue(editedPainScore, forKey: "painScore_CD")
+        
+        // Check output
+        print(editedPainScore)
+        
+        // Save to core data
+        do {
+            try context_CD.save()
+            painScoreEntries_CD.append(painEntry_CD)
+            // Test saving function
+            print(painScoreEntries_CD[(painScoreEntries_CD.count - 1)])
+        } catch let error as NSError {
+            print("Could not save \(error)")
+        }
+    }
+    
     @IBAction func adjustPainScore(sender: UIStepper) {
+        editedPainScore = Int(sender.value)
         painScoreLabel.text = "Pain: \(Int(sender.value))"
     }
     
@@ -68,6 +96,7 @@ class editHistoryViewController: UIViewController {
     }
 
     @IBAction func saveButtonAction(sender: AnyObject) {
+        logPainScore()
         dismissViewControllerAnimated(true, completion: nil)
     }
     

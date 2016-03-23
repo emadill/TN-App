@@ -94,7 +94,7 @@ class painScoreTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Rate your pain on a scale from 1-10 with 10 being the worst"
+        return "Rate your pain, with 10 being the worst"
     }
     
     // MARK: - Navigation

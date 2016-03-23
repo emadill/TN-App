@@ -66,18 +66,15 @@ class painLocationViewController: UIViewController {
         painEntry_CD.setValue(recordedPainScore, forKey: "painScore_CD")
         painEntry_CD.setValue(timestamp, forKey: "timestamp_CD")
         
-        // Check output
-        print(recordedPainScore)
-        print(timestamp)
-        
         // Save to core data
         do {
             try context_CD.save()
             painScoreEntries_CD.append(painEntry_CD)
+            // Test saving function
+            print(painScoreEntries_CD[(painScoreEntries_CD.count - 1)])
         } catch let error as NSError {
             print("Could not save \(error)")
         }
-        
     }
     
     @IBAction func cancelButtonAction(sender: AnyObject) {
