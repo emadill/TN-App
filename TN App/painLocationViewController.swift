@@ -61,8 +61,14 @@ class painLocationViewController: UIViewController {
         let entity_CD = NSEntityDescription.entityForName("PainHistory", inManagedObjectContext: context_CD)
         let painEntry_CD = NSManagedObject(entity: entity_CD!, insertIntoManagedObjectContext: context_CD)
         
-        // Assign values
-        let timestamp = NSDate()
+        // Create timestamp
+        // Timestamp will be a string to get proper output and for simplicity
+        // Create dateFormatter to achieve this
+        let datetime = NSDate()
+        let timestampFormatter = NSDateFormatter()
+        timestampFormatter.dateFormat = "MMMM dd, yyyy -- HH:mm"
+        let timestamp = timestampFormatter.stringFromDate(datetime)
+        
         painEntry_CD.setValue(recordedPainScore, forKey: "painScore_CD")
         painEntry_CD.setValue(timestamp, forKey: "timestamp_CD")
         

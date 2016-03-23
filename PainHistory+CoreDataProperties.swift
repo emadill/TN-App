@@ -2,7 +2,7 @@
 //  PainHistory+CoreDataProperties.swift
 //  TN App
 //
-//  Created by Evan Madill on 3/20/16.
+//  Created by Evan Madill on 3/22/16.
 //  Copyright © 2016 Evan Madill. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,6 +16,6 @@ extension PainHistory {
 
     @NSManaged var entryID_CD: NSNumber?
     @NSManaged var painScore_CD: NSNumber?
-    @NSManaged var timestamp_CD: NSDate?
+    @NSManaged var timestamp_CD: String?
 
 }
