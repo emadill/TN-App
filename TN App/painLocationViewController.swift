@@ -66,7 +66,7 @@ class painLocationViewController: UIViewController {
         // Create dateFormatter to achieve this
         let datetime = NSDate()
         let timestampFormatter = NSDateFormatter()
-        timestampFormatter.dateFormat = "MMMM dd, yyyy -- HH:mm"
+        timestampFormatter.dateFormat = "MMMM dd, yyyy -- h:mm a"
         let timestamp = timestampFormatter.stringFromDate(datetime)
         
         painEntry_CD.setValue(recordedPainScore, forKey: "painScore_CD")

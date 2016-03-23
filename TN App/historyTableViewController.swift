@@ -84,7 +84,7 @@ class historyTableViewController: UITableViewController, NSFetchedResultsControl
         // Test code for fetched objects
         let painHistoryEntry_CD = fetchedResultsController.objectAtIndexPath(indexPath) as! PainHistory
         cell.historyScoreLabel.text = "Score: \(painHistoryEntry_CD.painScore_CD!)"
-        // cell.historyTimestampLabel.text = "\(painHistoryEntry_CD.timestamp_CD!)"
+        cell.historyTimestampLabel.text = "\(painHistoryEntry_CD.timestamp_CD!)"
         cell.historyImageview.image = UIImage(named: "default")
     }
 
