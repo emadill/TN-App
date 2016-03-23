@@ -20,7 +20,7 @@ class historyTableViewController: UITableViewController, NSFetchedResultsControl
         super.viewDidLoad()
         
         //LOAD SAMPLE DATA -- SHOULD BE REMOVED LATER
-        loadSampleDataset()
+        // loadSampleDataset()
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -226,20 +226,19 @@ class historyTableViewController: UITableViewController, NSFetchedResultsControl
             
             if let selectedHistoryCell = sender as? historyTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedHistoryCell)!
-                let historyCellToBeEdited = sampleDataset[indexPath.row]
+                let painHistoryEntry_CD = fetchedResultsController.objectAtIndexPath(indexPath) as! PainHistory
                 // Labels not yet initialized in editHistoryViewController
                 // Have to pass data to temp variables not displayed in view
                 // Careful with forcing to Int. May have to clean this up later and wrap in if statement
-                vcToBePresented.adjustpainscoreinitialvalue = Double(historyCellToBeEdited.historyScoreString)!
-                vcToBePresented.editedPainScore = Int(historyCellToBeEdited.historyScoreString)!
-                vcToBePresented.painscorestringtemp = "Pain: " + historyCellToBeEdited.historyScoreString
-                vcToBePresented.datetimestringtemp = "Pain: " + historyCellToBeEdited.historyTimestampString
+                vcToBePresented.adjustpainscoreinitialvalue = Double(painHistoryEntry_CD.painScore_CD!)
+                vcToBePresented.editedPainScore = Int(painHistoryEntry_CD.painScore_CD!)
+                vcToBePresented.painscorestringtemp = "Pain: \(painHistoryEntry_CD.painScore_CD!)"
+                vcToBePresented.datetimestringtemp = "\(painHistoryEntry_CD.timestamp_CD!)"
             }
             else {
                 print("Error")
             }
         }
-        
     }
 
 
