@@ -237,6 +237,8 @@ class historyTableViewController: UITableViewController, NSFetchedResultsControl
                 vcToBePresented.editedPainScore = Int(painHistoryEntry_CD.painScore_CD!)
                 vcToBePresented.painscorestringtemp = "Pain: \(painHistoryEntry_CD.painScore_CD!)"
                 vcToBePresented.datetimestringtemp = "\(painHistoryEntry_CD.timestamp_CD!)"
+                // Should be only part that needs to be kept
+                vcToBePresented.entryIDToBeUpdated = Int(painHistoryEntry_CD.entryID_CD!)
             }
             else {
                 print("Error")

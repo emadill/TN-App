@@ -25,6 +25,7 @@ class editHistoryViewController: UIViewController {
     var datetimestringtemp: String = ""
     var adjustpainscoreinitialvalue: Double = 0
     var editedPainScore: Int = 0
+    var entryIDToBeUpdated = 0
     
     var labelsToBeStyled = [UILabel]()
     var painScoreEntries_CD = [NSManagedObject]()
@@ -63,34 +64,31 @@ class editHistoryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func logPainScore() {
+    
+    
+    // Function to get selected entry and update
+    func updatePainEntry() {
         let appDelegate_CD = UIApplication.sharedApplication().delegate as! AppDelegate
         let context_CD = appDelegate_CD.managedObjectContext
         
-        // Code saves rather than edits //
-        let entity_CD = NSEntityDescription.entityForName("PainHistory", inManagedObjectContext: context_CD)
-        let painEntry_CD = NSManagedObject(entity: entity_CD!, insertIntoManagedObjectContext: context_CD)
-        // Assign updated values
-        painEntry_CD.setValue(editedPainScore, forKey: "painScore_CD")
-        // Check output
-        print(editedPainScore)
-        // Save to core data
+        let request_CD = NSFetchRequest(entityName: "PainHistory")
+        let predicate_CD = NSPredicate(format: "entryID_CD == %d", entryIDToBeUpdated)
+        request_CD.predicate = predicate_CD
+        
+        do {
+            let getEntryToBeUpdated = try context_CD.executeFetchRequest(request_CD) as! [NSManagedObject]
+            getEntryToBeUpdated[0].setValue(editedPainScore, forKey: "painScore_CD")
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+        
         do {
             try context_CD.save()
-            painScoreEntries_CD.append(painEntry_CD)
-            // Test saving function
-            print(painScoreEntries_CD[(painScoreEntries_CD.count - 1)])
         } catch let error as NSError {
             print("Could not save \(error)")
         }
-        
-        // Code to try to edit rather than save //
-        //var fetchedEntry_CD = NSFetchRequest(entityName: "PainHistory")
-        //let predicate = NSPredicate(format: "entryID_CD = %@", entryID_CD)
-        //fetchedEntry_CD.predicate = predicate
-
-        
     }
+    
     
     @IBAction func adjustPainScore(sender: UIStepper) {
         editedPainScore = Int(sender.value)
@@ -103,7 +101,7 @@ class editHistoryViewController: UIViewController {
     }
 
     @IBAction func saveButtonAction(sender: AnyObject) {
-        logPainScore()
+        updatePainEntry()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
