@@ -27,6 +27,10 @@ class painLocationViewController: UIViewController {
     var timestamp: NSDate = NSDate()
     var recordedPainScore: Int = 0
     
+    // Fetch last entry ID in core data
+    // Hacky solution, but need until DB gets set
+    var lastEntryID: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +49,6 @@ class painLocationViewController: UIViewController {
         }
         painLocationImage.layer.cornerRadius = 5.0
         painLocationImage.clipsToBounds = true
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,8 +56,37 @@ class painLocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Get last entry ID
+    // Hacky solution -- delete once DB is created
+    func fetchLastEntryID() {
+        let appDelegate_CD = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context_CD = appDelegate_CD.managedObjectContext
+        
+        let request_CD = NSFetchRequest(entityName: "PainHistory")
+        // Get only the last entry
+        let timestampSort = NSSortDescriptor(key: "timestamp_CD", ascending: false)
+        request_CD.sortDescriptors = [timestampSort]
+        request_CD.fetchLimit = 1
+
+        do {
+            let lastEntryQuery = try context_CD.executeFetchRequest(request_CD) as! [NSManagedObject]
+            if lastEntryQuery.count > 0 {
+                print(lastEntryQuery[0].valueForKey("entryID_CD")!)
+                print(lastEntryQuery[0].valueForKey("timestamp_CD")!)
+                lastEntryID = lastEntryQuery[0].valueForKey("entryID_CD") as! Int
+            } else {
+                lastEntryID = 0
+            }
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+    }
+
     // Function to add pain score to core data
     func logPainScore() {
+        // Get data on last entry ID
+        fetchLastEntryID()
+        
         let appDelegate_CD = UIApplication.sharedApplication().delegate as! AppDelegate
         let context_CD = appDelegate_CD.managedObjectContext
         
@@ -87,6 +119,9 @@ class painLocationViewController: UIViewController {
         
         painEntry_CD.setValue(recordedPainScore, forKey: "painScore_CD")
         painEntry_CD.setValue(timestamp, forKey: "timestamp_CD")
+        // Hacky auto-increment of entry ID
+        var newEntryID = lastEntryID + 1
+        painEntry_CD.setValue(newEntryID, forKey: "entryID_CD")
         
         // Save to core data
         do {
@@ -104,6 +139,7 @@ class painLocationViewController: UIViewController {
     }
 
     @IBAction func saveButtonAction(sender: AnyObject) {
+        // fetchLastEntryID()
         logPainScore()
         dismissViewControllerAnimated(true, completion: nil)
     }

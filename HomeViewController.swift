@@ -64,6 +64,11 @@ class HomeViewController: UIViewController {
         }
     }
 
+    @IBAction func recordNewEventButtonAction(sender: AnyObject) {
+        // Change tab (0 = left)
+        tabBarController?.selectedIndex = 1
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     // MARK: - Navigation
 
