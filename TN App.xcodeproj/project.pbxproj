@@ -16,9 +16,9 @@
 		202742551C90FC5000BFA98B /* TN_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202742541C90FC5000BFA98B /* TN_AppTests.swift */; };
 		202742601C90FC5000BFA98B /* TN_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027425F1C90FC5000BFA98B /* TN_AppUITests.swift */; };
 		2027426E1C90FFFA00BFA98B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */; };
+		20310B951CA6D27E00B75753 /* PainHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20310B931CA6D27E00B75753 /* PainHistory+CoreDataProperties.swift */; };
+		20310B961CA6D27E00B75753 /* PainHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20310B941CA6D27E00B75753 /* PainHistory.swift */; };
 		204C548F1C973E5300799F81 /* historyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C548E1C973E5300799F81 /* historyTableViewController.swift */; };
-		207CFB671CA22F7E00FC9876 /* PainHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CFB651CA22F7E00FC9876 /* PainHistory+CoreDataProperties.swift */; };
-		207CFB681CA22F7E00FC9876 /* PainHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CFB661CA22F7E00FC9876 /* PainHistory.swift */; };
 		20881F231C97425900D31047 /* historyScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20881F221C97425900D31047 /* historyScoreCell.swift */; };
 		20881F251C97433300D31047 /* historyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20881F241C97433300D31047 /* historyTableViewCell.swift */; };
 		208F79EA1C93B872009383D7 /* painScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79E91C93B872009383D7 /* painScoreCell.swift */; };
@@ -63,9 +63,9 @@
 		2027425F1C90FC5000BFA98B /* TN_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TN_AppUITests.swift; sourceTree = "<group>"; };
 		202742611C90FC5000BFA98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		20310B931CA6D27E00B75753 /* PainHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PainHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		20310B941CA6D27E00B75753 /* PainHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PainHistory.swift; sourceTree = "<group>"; };
 		204C548E1C973E5300799F81 /* historyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyTableViewController.swift; sourceTree = "<group>"; };
-		207CFB651CA22F7E00FC9876 /* PainHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PainHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		207CFB661CA22F7E00FC9876 /* PainHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PainHistory.swift; sourceTree = "<group>"; };
 		20881F221C97425900D31047 /* historyScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyScoreCell.swift; sourceTree = "<group>"; };
 		20881F241C97433300D31047 /* historyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyTableViewCell.swift; sourceTree = "<group>"; };
 		208F79E91C93B872009383D7 /* painScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreCell.swift; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 		202742311C90FC5000BFA98B = {
 			isa = PBXGroup;
 			children = (
-				207CFB651CA22F7E00FC9876 /* PainHistory+CoreDataProperties.swift */,
-				207CFB661CA22F7E00FC9876 /* PainHistory.swift */,
+				20310B931CA6D27E00B75753 /* PainHistory+CoreDataProperties.swift */,
+				20310B941CA6D27E00B75753 /* PainHistory.swift */,
 				2027423C1C90FC5000BFA98B /* TN App */,
 				202742531C90FC5000BFA98B /* TN AppTests */,
 				2027425E1C90FC5000BFA98B /* TN AppUITests */,
@@ -303,8 +303,8 @@
 				20E54F9C1C9CA08F00EBD555 /* TN App.xcdatamodeld in Sources */,
 				200F791C1C94A6C600AAA378 /* HomeViewController.swift in Sources */,
 				2027423E1C90FC5000BFA98B /* AppDelegate.swift in Sources */,
-				207CFB671CA22F7E00FC9876 /* PainHistory+CoreDataProperties.swift in Sources */,
-				207CFB681CA22F7E00FC9876 /* PainHistory.swift in Sources */,
+				20310B951CA6D27E00B75753 /* PainHistory+CoreDataProperties.swift in Sources */,
+				20310B961CA6D27E00B75753 /* PainHistory.swift in Sources */,
 				204C548F1C973E5300799F81 /* historyTableViewController.swift in Sources */,
 				208F79EE1C93BC7F009383D7 /* painScoreTableViewController.swift in Sources */,
 				20DAA4591C99CC1D00DC7C62 /* editHistoryViewController.swift in Sources */,

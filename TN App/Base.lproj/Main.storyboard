@@ -561,14 +561,26 @@
                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21o-bw-RmJ">
+                                <rect key="frame" x="20" y="423" width="335" height="52"/>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="jIb-4x-77V"/>
+                                </constraints>
+                                <state key="normal" title="Request Uber">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ze6-fF-UVs" firstAttribute="leading" secondItem="Bfw-57-uh7" secondAttribute="leadingMargin" constant="-6" id="BVO-Qs-zGS"/>
                             <constraint firstItem="Ze6-fF-UVs" firstAttribute="leading" secondItem="cqv-sO-6zK" secondAttribute="leading" id="IaI-bQ-ZtT"/>
                             <constraint firstItem="cqv-sO-6zK" firstAttribute="trailing" secondItem="Ze6-fF-UVs" secondAttribute="trailing" id="JyT-L6-m3c"/>
+                            <constraint firstItem="21o-bw-RmJ" firstAttribute="leading" secondItem="1S0-ON-0fb" secondAttribute="leading" id="QWz-jj-ShM"/>
                             <constraint firstItem="1Zv-7a-mwu" firstAttribute="top" secondItem="Fmh-YS-wPP" secondAttribute="bottom" constant="4" id="SBV-ec-mIj"/>
                             <constraint firstItem="Awq-Fk-3RF" firstAttribute="trailing" secondItem="1S0-ON-0fb" secondAttribute="trailing" id="Sqo-gB-HTp"/>
+                            <constraint firstItem="21o-bw-RmJ" firstAttribute="trailing" secondItem="1S0-ON-0fb" secondAttribute="trailing" id="TPd-IM-a8C"/>
                             <constraint firstItem="1S0-ON-0fb" firstAttribute="centerY" secondItem="7cO-4G-TOT" secondAttribute="centerY" id="Vci-qP-2c8"/>
                             <constraint firstItem="Fmh-YS-wPP" firstAttribute="centerY" secondItem="Awq-Fk-3RF" secondAttribute="centerY" id="aJy-KR-Jn0"/>
                             <constraint firstItem="cqv-sO-6zK" firstAttribute="centerX" secondItem="1S0-ON-0fb" secondAttribute="centerX" id="bfY-zx-Xnf"/>
@@ -584,6 +596,7 @@
                             <constraint firstItem="7cO-4G-TOT" firstAttribute="top" secondItem="cqv-sO-6zK" secondAttribute="bottom" constant="4" id="vn7-cf-Fa7"/>
                             <constraint firstItem="Awq-Fk-3RF" firstAttribute="top" secondItem="7cO-4G-TOT" secondAttribute="bottom" constant="12" id="w4f-NW-qPc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7cO-4G-TOT" secondAttribute="trailing" constant="-5" id="xBi-uV-4hO"/>
+                            <constraint firstItem="7cO-4G-TOT" firstAttribute="top" secondItem="21o-bw-RmJ" secondAttribute="bottom" constant="16" id="xER-vQ-wDw"/>
                             <constraint firstItem="7cO-4G-TOT" firstAttribute="leading" secondItem="Bfw-57-uh7" secondAttribute="leadingMargin" constant="-7" id="zzv-Dy-mTJ"/>
                         </constraints>
                     </view>
@@ -594,6 +607,7 @@
                         <outlet property="mainContentLabel" destination="cqv-sO-6zK" id="dnw-Fe-Gol"/>
                         <outlet property="phoneButtonStyle" destination="Awq-Fk-3RF" id="QC7-V2-wdi"/>
                         <outlet property="phoneLabel" destination="Fmh-YS-wPP" id="0tN-IB-bZd"/>
+                        <outlet property="requestUberButtonStyle" destination="21o-bw-RmJ" id="VBt-Jr-9Th"/>
                         <outlet property="titleLabel" destination="Ze6-fF-UVs" id="xG7-5b-ivU"/>
                     </connections>
                 </viewController>
@@ -724,19 +738,19 @@
                                 </constraints>
                                 <color key="onTintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC9-rL-fht">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheek Pain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC9-rL-fht">
                                 <rect key="frame" x="46" y="490" width="144" height="49"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="28"/>
                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jaw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoY-V1-slV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jaw Pain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoY-V1-slV">
                                 <rect key="frame" x="46" y="554" width="144" height="49"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="28"/>
                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNk-Rt-BBb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ear Pain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNk-Rt-BBb">
                                 <rect key="frame" x="46" y="424" width="144" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="144" id="bV3-qi-W7Q"/>

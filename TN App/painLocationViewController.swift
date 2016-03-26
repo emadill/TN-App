@@ -69,6 +69,22 @@ class painLocationViewController: UIViewController {
         timestampFormatter.dateFormat = "MMMM dd, yyyy -- h:mm a"
         let timestamp = timestampFormatter.stringFromDate(datetime)
         
+        if switch1Label.on == true {
+            painEntry_CD.setValue(true, forKey: "earPain_CD")
+        } else {
+            painEntry_CD.setValue(false, forKey: "earPain_CD")
+        }
+        if switch2Label.on == true {
+            painEntry_CD.setValue(true, forKey: "cheekPain_CD")
+        } else {
+            painEntry_CD.setValue(false, forKey: "cheekPain_CD")
+        }
+        if switch3Label.on == true {
+            painEntry_CD.setValue(true, forKey: "jawPain_CD")
+        } else {
+            painEntry_CD.setValue(false, forKey: "jawPain_CD")
+        }
+        
         painEntry_CD.setValue(recordedPainScore, forKey: "painScore_CD")
         painEntry_CD.setValue(timestamp, forKey: "timestamp_CD")
         

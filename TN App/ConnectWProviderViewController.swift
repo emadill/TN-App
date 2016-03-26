@@ -17,8 +17,10 @@ class ConnectWProviderViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailButtonStyle: UIButton!
     @IBOutlet weak var phoneButtonStyle: UIButton!
+    @IBOutlet weak var requestUberButtonStyle: UIButton!
     
     var labelsToBeStyled = [UILabel]()
+    var buttonsToBeStyled = [UIButton]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +31,19 @@ class ConnectWProviderViewController: UIViewController {
         labelsToBeStyled.append(mainContentLabel)
         labelsToBeStyled.append(emailLabel)
         labelsToBeStyled.append(phoneLabel)
+        buttonsToBeStyled.append(emailButtonStyle)
+        buttonsToBeStyled.append(phoneButtonStyle)
+        buttonsToBeStyled.append(requestUberButtonStyle)
         
         for label in labelsToBeStyled {
             label.layer.cornerRadius = 5.0
             label.clipsToBounds = true
         }
-
+        for button in buttonsToBeStyled {
+            button.layer.cornerRadius = 5.0
+            button.clipsToBounds = true
+        }
+        
         
     }
 

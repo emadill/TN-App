@@ -36,7 +36,7 @@ class GetHelpViewController: UIViewController {
         }
         
         for button in buttonsToBeStyled {
-            button.layer.cornerRadius = 10.0
+            button.layer.cornerRadius = 5.0
             button.clipsToBounds = true
         }
     }

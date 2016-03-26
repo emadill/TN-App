@@ -117,6 +117,9 @@ class painScoreTableViewController: UITableViewController {
                 // pass data to be saved to next view controller
                 let recordedPainScore = selectedScoreCell.scoreLabel.text!
                 locationDetailViewController.recordedPainScore = Int(recordedPainScore)!
+                // Try to unhighlight cell in the event of cancelled save
+                // Make sure to do this after the data has been passed
+                selectedScoreCell.selected = false
             }
         }
     }
