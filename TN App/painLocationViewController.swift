@@ -64,8 +64,9 @@ class painLocationViewController: UIViewController {
         
         let request_CD = NSFetchRequest(entityName: "PainHistory")
         // Get only the last entry
-        let timestampSort = NSSortDescriptor(key: "timestamp_CD", ascending: false)
-        request_CD.sortDescriptors = [timestampSort]
+        // Think this might be confused when the timestamps are the same
+        let entrySort = NSSortDescriptor(key: "entryID_CD", ascending: false)
+        request_CD.sortDescriptors = [entrySort]
         request_CD.fetchLimit = 1
 
         do {
