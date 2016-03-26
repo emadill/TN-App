@@ -46,6 +46,10 @@ class GetHelpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.title = "WritTN"
+    }
+    
     @IBAction func findProviderButtonAction(sender: AnyObject) {
         // Be sure to include http(s)
         // Safely unwrap optional?
@@ -64,14 +68,11 @@ class GetHelpViewController: UIViewController {
         }
     }
   
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        self.navigationItem.title = nil
     }
-    */
 
 }

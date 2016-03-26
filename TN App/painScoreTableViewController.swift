@@ -16,7 +16,7 @@ class painScoreTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         loadScoreScale()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,6 +25,10 @@ class painScoreTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.title = "WritTN"
     }
     
 
@@ -100,6 +104,8 @@ class painScoreTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        self.navigationItem.title = nil
+        
         // Get the new view controller
         if segue.identifier == "showPainLocationSegue" {
             let navControl = segue.destinationViewController as! UINavigationController

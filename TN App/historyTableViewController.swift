@@ -35,6 +35,7 @@ class historyTableViewController: UITableViewController, NSFetchedResultsControl
         super.viewWillAppear(animated)
         
         // Initialize fetchedResultsController
+        self.navigationItem.title = "WritTN"
         initializeFetchedResultsController()
     }
     
@@ -219,6 +220,8 @@ class historyTableViewController: UITableViewController, NSFetchedResultsControl
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        self.navigationItem.title = nil
+        
         if segue.identifier == "editHistorySegue" {
             // editHistoryViewController is embedded in a navigation controller not part of historyTableViewController
             let navControl = segue.destinationViewController as! UINavigationController

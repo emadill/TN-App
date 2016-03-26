@@ -13,11 +13,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var checkHistoryButtonStyle: UIButton!
+    @IBOutlet weak var recordNewEventButtonStyle: UIButton!
     @IBOutlet weak var TNShareButtonStyle: UIButton!
     @IBOutlet weak var homeScrollView: UIScrollView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var chartLabel: UILabel!
     @IBOutlet weak var newsLabel: UILabel!
+    @IBOutlet weak var newsImageLabelBackground: UIImageView!
     
     var labelsToBeStyled = [UILabel]()
 
@@ -38,8 +40,12 @@ class HomeViewController: UIViewController {
         
         checkHistoryButtonStyle.layer.cornerRadius = 5.0
         checkHistoryButtonStyle.clipsToBounds = true
+        recordNewEventButtonStyle.layer.cornerRadius = 5.0
+        recordNewEventButtonStyle.clipsToBounds = true
         TNShareButtonStyle.layer.cornerRadius = 5.0
         TNShareButtonStyle.clipsToBounds = true
+        newsImageLabelBackground.layer.cornerRadius = 5.0
+        newsImageLabelBackground.clipsToBounds = true
         
     }
 
@@ -48,20 +54,23 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.title = "WritTN"
+    }
+    
     @IBAction func TNShareButtonAction(sender: AnyObject) {
         if let connectURL = NSURL(string: "http://fpa-support.org/find-help/") {
             UIApplication.sharedApplication().openURL(connectURL)
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Set title to nil when switching views so back button is preserved
+        self.navigationItem.title = nil
     }
-    */
+    
 
 }

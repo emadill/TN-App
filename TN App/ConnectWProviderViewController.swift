@@ -23,6 +23,8 @@ class ConnectWProviderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "WritTN"
+        
         labelsToBeStyled.append(titleLabel)
         labelsToBeStyled.append(mainContentLabel)
         labelsToBeStyled.append(emailLabel)

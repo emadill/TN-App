@@ -32,7 +32,7 @@ class painLocationViewController: UIViewController {
         super.viewDidLoad()
         
         // Set navbar title
-        self.navigationItem.title = "Location"
+        self.navigationItem.title = "WritTN"
         
         backgroundLabelsToBeStyled.append(backgroundLabel)
         backgroundLabelsToBeStyled.append(backgroundLabelZone1)

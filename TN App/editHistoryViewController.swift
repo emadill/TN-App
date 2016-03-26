@@ -31,6 +31,8 @@ class editHistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "WritTN"
 
         labelsToBeStyled.append(datetimeLabel)
         labelsToBeStyled.append(painScoreBackgroundLabel)
@@ -65,15 +67,13 @@ class editHistoryViewController: UIViewController {
         let appDelegate_CD = UIApplication.sharedApplication().delegate as! AppDelegate
         let context_CD = appDelegate_CD.managedObjectContext
         
+        // Code saves rather than edits //
         let entity_CD = NSEntityDescription.entityForName("PainHistory", inManagedObjectContext: context_CD)
         let painEntry_CD = NSManagedObject(entity: entity_CD!, insertIntoManagedObjectContext: context_CD)
-        
-        // Assign values
+        // Assign updated values
         painEntry_CD.setValue(editedPainScore, forKey: "painScore_CD")
-        
         // Check output
         print(editedPainScore)
-        
         // Save to core data
         do {
             try context_CD.save()
@@ -83,6 +83,13 @@ class editHistoryViewController: UIViewController {
         } catch let error as NSError {
             print("Could not save \(error)")
         }
+        
+        // Code to try to edit rather than save //
+        //var fetchedEntry_CD = NSFetchRequest(entityName: "PainHistory")
+        //let predicate = NSPredicate(format: "entryID_CD = %@", entryID_CD)
+        //fetchedEntry_CD.predicate = predicate
+
+        
     }
     
     @IBAction func adjustPainScore(sender: UIStepper) {
