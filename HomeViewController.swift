@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var chartLabel: UILabel!
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var newsImageLabelBackground: UIImageView!
+    @IBOutlet weak var graphViewBackground: homeGraphView!
+    
     
     var labelsToBeStyled = [UILabel]()
 
@@ -46,6 +48,8 @@ class HomeViewController: UIViewController {
         TNShareButtonStyle.clipsToBounds = true
         newsImageLabelBackground.layer.cornerRadius = 5.0
         newsImageLabelBackground.clipsToBounds = true
+        graphViewBackground.layer.cornerRadius = 5.0
+        graphViewBackground.clipsToBounds = true
         
     }
 

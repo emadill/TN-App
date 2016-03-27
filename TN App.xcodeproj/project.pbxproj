@@ -17,6 +17,7 @@
 		202742601C90FC5000BFA98B /* TN_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027425F1C90FC5000BFA98B /* TN_AppUITests.swift */; };
 		2027426E1C90FFFA00BFA98B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */; };
 		204C548F1C973E5300799F81 /* historyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C548E1C973E5300799F81 /* historyTableViewController.swift */; };
+		205F6DB21CA8506900DBB9A9 /* homeGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205F6DB11CA8506900DBB9A9 /* homeGraphView.swift */; };
 		20881F231C97425900D31047 /* historyScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20881F221C97425900D31047 /* historyScoreCell.swift */; };
 		20881F251C97433300D31047 /* historyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20881F241C97433300D31047 /* historyTableViewCell.swift */; };
 		208F79EA1C93B872009383D7 /* painScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F79E91C93B872009383D7 /* painScoreCell.swift */; };
@@ -64,6 +65,7 @@
 		202742611C90FC5000BFA98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		204C548E1C973E5300799F81 /* historyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyTableViewController.swift; sourceTree = "<group>"; };
+		205F6DB11CA8506900DBB9A9 /* homeGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeGraphView.swift; sourceTree = "<group>"; };
 		20881F221C97425900D31047 /* historyScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyScoreCell.swift; sourceTree = "<group>"; };
 		20881F241C97433300D31047 /* historyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyTableViewCell.swift; sourceTree = "<group>"; };
 		208F79E91C93B872009383D7 /* painScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = painScoreCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				20C165F41C9789EA005EEC5A /* ConnectWProviderViewController.swift */,
 				2027426D1C90FFFA00BFA98B /* TabBarViewController.swift */,
 				202742431C90FC5000BFA98B /* Main.storyboard */,
+				205F6DB11CA8506900DBB9A9 /* homeGraphView.swift */,
 				20DAA4581C99CC1D00DC7C62 /* editHistoryViewController.swift */,
 				20881F221C97425900D31047 /* historyScoreCell.swift */,
 				20881F241C97433300D31047 /* historyTableViewCell.swift */,
@@ -308,6 +311,7 @@
 				204C548F1C973E5300799F81 /* historyTableViewController.swift in Sources */,
 				208F79EE1C93BC7F009383D7 /* painScoreTableViewController.swift in Sources */,
 				20DAA4591C99CC1D00DC7C62 /* editHistoryViewController.swift in Sources */,
+				205F6DB21CA8506900DBB9A9 /* homeGraphView.swift in Sources */,
 				20C165F51C9789EA005EEC5A /* ConnectWProviderViewController.swift in Sources */,
 				20881F251C97433300D31047 /* historyTableViewCell.swift in Sources */,
 				200F791E1C94A87B00AAA378 /* GetHelpViewController.swift in Sources */,
