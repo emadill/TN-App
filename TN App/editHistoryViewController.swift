@@ -110,8 +110,10 @@ class editHistoryViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidBeginEditing(textView: UITextView) {
         // If notes are edited, delete notes prompt and flag changes
-        painNotes.text = ""
         notesEditedFlag = true
+        if painNotes.text == "Notes:" {
+            painNotes.text = ""
+        }
     }
     
     func dismissKeyboard() {
@@ -120,11 +122,13 @@ class editHistoryViewController: UIViewController, UITextViewDelegate {
     
     // Dismiss view with cancel button
     @IBAction func cancelButtonAction(sender: AnyObject) {
+        dismissKeyboard()
         dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func saveButtonAction(sender: AnyObject) {
         updatePainEntry()
+        dismissKeyboard()
         dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -243,7 +243,7 @@ class historyTableViewController: UITableViewController, NSFetchedResultsControl
                 if painHistoryEntry_CD.painNotes_CD != nil {
                     vcToBePresented.notesToBeDisplayedOnLoad = painHistoryEntry_CD.painNotes_CD! as String
                 } else {
-                    vcToBePresented.notesToBeDisplayedOnLoad = "Notes: "
+                    vcToBePresented.notesToBeDisplayedOnLoad = "Notes:"
                 }
             }
             else {
