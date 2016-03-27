@@ -460,6 +460,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TN App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TN.TN-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -473,6 +474,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "TN App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TN.TN-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
