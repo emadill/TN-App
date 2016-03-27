@@ -43,34 +43,34 @@ class painScoreTableViewController: UITableViewController {
     }
     
     func loadScoreScale() {
-        let scoreScaleImage1 = UIImage(named: "stethoscope")!
+        let scoreScaleImage1 = UIImage(named: "brainImage")!
         let scoreScale1 = painScoreCell(scoreString: "1", scoreImage: scoreScaleImage1)
         
-        let scoreScaleImage2 = UIImage(named: "stethoscope")!
+        let scoreScaleImage2 = UIImage(named: "brainImage")!
         let scoreScale2 = painScoreCell(scoreString: "2", scoreImage: scoreScaleImage2)
         
-        let scoreScaleImage3 = UIImage(named: "stethoscope")!
+        let scoreScaleImage3 = UIImage(named: "brainImage")!
         let scoreScale3 = painScoreCell(scoreString: "3", scoreImage: scoreScaleImage3)
         
-        let scoreScaleImage4 = UIImage(named: "stethoscope")!
+        let scoreScaleImage4 = UIImage(named: "brainImage")!
         let scoreScale4 = painScoreCell(scoreString: "4", scoreImage: scoreScaleImage4)
         
-        let scoreScaleImage5 = UIImage(named: "stethoscope")!
+        let scoreScaleImage5 = UIImage(named: "brainImage")!
         let scoreScale5 = painScoreCell(scoreString: "5", scoreImage: scoreScaleImage5)
         
-        let scoreScaleImage6 = UIImage(named: "stethoscope")!
+        let scoreScaleImage6 = UIImage(named: "brainImage")!
         let scoreScale6 = painScoreCell(scoreString: "6", scoreImage: scoreScaleImage6)
         
-        let scoreScaleImage7 = UIImage(named: "stethoscope")!
+        let scoreScaleImage7 = UIImage(named: "brainImage")!
         let scoreScale7 = painScoreCell(scoreString: "7", scoreImage: scoreScaleImage7)
         
-        let scoreScaleImage8 = UIImage(named: "stethoscope")!
+        let scoreScaleImage8 = UIImage(named: "brainImage")!
         let scoreScale8 = painScoreCell(scoreString: "8", scoreImage: scoreScaleImage8)
         
-        let scoreScaleImage9 = UIImage(named: "stethoscope")!
+        let scoreScaleImage9 = UIImage(named: "brainImage")!
         let scoreScale9 = painScoreCell(scoreString: "9", scoreImage: scoreScaleImage9)
         
-        let scoreScaleImage10 = UIImage(named: "stethoscope")!
+        let scoreScaleImage10 = UIImage(named: "brainImage")!
         let scoreScale10 = painScoreCell(scoreString: "10", scoreImage: scoreScaleImage10)
         
         scoreScale.append(scoreScale10)

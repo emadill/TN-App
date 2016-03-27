@@ -30,7 +30,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="105" id="E8P-Br-gty"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="36"/>
                                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -644,7 +644,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stethoscope" translatesAutoresizingMaskIntoConstraints="NO" id="CY0-mI-PeL">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brainImage" translatesAutoresizingMaskIntoConstraints="NO" id="CY0-mI-PeL">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yh-3L-MIm">
@@ -958,6 +958,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="brainImage" width="95" height="95"/>
         <image name="default" width="389" height="734"/>
         <image name="dish_labelBackground" width="512" height="256"/>
         <image name="first" width="30" height="30"/>
