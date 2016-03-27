@@ -239,6 +239,12 @@ class historyTableViewController: UITableViewController, NSFetchedResultsControl
                 vcToBePresented.datetimestringtemp = "\(painHistoryEntry_CD.timestamp_CD!)"
                 // Should be only part that needs to be kept
                 vcToBePresented.entryIDToBeUpdated = Int(painHistoryEntry_CD.entryID_CD!)
+                // Load up any notes that have been edited
+                if painHistoryEntry_CD.painNotes_CD != nil {
+                    vcToBePresented.notesToBeDisplayedOnLoad = painHistoryEntry_CD.painNotes_CD! as String
+                } else {
+                    vcToBePresented.notesToBeDisplayedOnLoad = "Notes: "
+                }
             }
             else {
                 print("Error")

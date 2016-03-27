@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class editHistoryViewController: UIViewController {
+class editHistoryViewController: UIViewController, UITextViewDelegate {
     //MARK: Properties
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -26,6 +26,8 @@ class editHistoryViewController: UIViewController {
     var adjustpainscoreinitialvalue: Double = 0
     var editedPainScore: Int = 0
     var entryIDToBeUpdated = 0
+    var notesEditedFlag: Bool = false
+    var notesToBeDisplayedOnLoad: String = ""
     
     var labelsToBeStyled = [UILabel]()
     var painScoreEntries_CD = [NSManagedObject]()
@@ -34,6 +36,14 @@ class editHistoryViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "WritTN"
+        painNotes.delegate = self
+        // Make sure edited flag is reset
+        notesEditedFlag = false
+        // Load up prompt or previous notes
+        painNotes.text = notesToBeDisplayedOnLoad
+        // Dismiss keyboard after editing
+        let dismissKeyboardGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(dismissKeyboardGesture)
 
         labelsToBeStyled.append(datetimeLabel)
         labelsToBeStyled.append(painScoreBackgroundLabel)
@@ -65,7 +75,6 @@ class editHistoryViewController: UIViewController {
     }
     
     
-    
     // Function to get selected entry and update
     func updatePainEntry() {
         let appDelegate_CD = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -78,6 +87,10 @@ class editHistoryViewController: UIViewController {
         do {
             let getEntryToBeUpdated = try context_CD.executeFetchRequest(request_CD) as! [NSManagedObject]
             getEntryToBeUpdated[0].setValue(editedPainScore, forKey: "painScore_CD")
+            if notesEditedFlag == true {
+                let notesEditedText = painNotes.text
+                getEntryToBeUpdated[0].setValue(notesEditedText, forKey: "painNotes_CD")
+            }
         } catch {
             fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
@@ -93,6 +106,16 @@ class editHistoryViewController: UIViewController {
     @IBAction func adjustPainScore(sender: UIStepper) {
         editedPainScore = Int(sender.value)
         painScoreLabel.text = "Pain: \(Int(sender.value))"
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        // If notes are edited, delete notes prompt and flag changes
+        painNotes.text = ""
+        notesEditedFlag = true
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     // Dismiss view with cancel button

@@ -14,11 +14,12 @@ import CoreData
 
 extension PainHistory {
 
+    @NSManaged var cheekPain_CD: NSNumber?
+    @NSManaged var earPain_CD: NSNumber?
     @NSManaged var entryID_CD: NSNumber?
+    @NSManaged var jawPain_CD: NSNumber?
     @NSManaged var painScore_CD: NSNumber?
     @NSManaged var timestamp_CD: String?
-    @NSManaged var earPain_CD: NSNumber?
-    @NSManaged var jawPain_CD: NSNumber?
-    @NSManaged var cheekPain_CD: NSNumber?
+    @NSManaged var painNotes_CD: String?
 
 }

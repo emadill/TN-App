@@ -30,7 +30,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="105" id="E8P-Br-gty"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="36"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
                                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -293,7 +293,7 @@
                                 <rect key="frame" x="12" y="395" width="352" height="215"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -564,22 +564,28 @@
                                 <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21o-bw-RmJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21o-bw-RmJ">
                                 <rect key="frame" x="20" y="423" width="335" height="52"/>
-                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="jIb-4x-77V"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="Request Uber">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="oNw-fm-bJ9">
+                                <rect key="frame" x="20" y="146" width="335" height="269"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ze6-fF-UVs" firstAttribute="leading" secondItem="Bfw-57-uh7" secondAttribute="leadingMargin" constant="-6" id="BVO-Qs-zGS"/>
                             <constraint firstItem="Ze6-fF-UVs" firstAttribute="leading" secondItem="cqv-sO-6zK" secondAttribute="leading" id="IaI-bQ-ZtT"/>
                             <constraint firstItem="cqv-sO-6zK" firstAttribute="trailing" secondItem="Ze6-fF-UVs" secondAttribute="trailing" id="JyT-L6-m3c"/>
+                            <constraint firstItem="21o-bw-RmJ" firstAttribute="top" secondItem="oNw-fm-bJ9" secondAttribute="bottom" constant="8" symbolic="YES" id="NC1-l0-ov5"/>
+                            <constraint firstItem="oNw-fm-bJ9" firstAttribute="top" secondItem="Ze6-fF-UVs" secondAttribute="bottom" constant="13" id="PUR-8x-elc"/>
                             <constraint firstItem="21o-bw-RmJ" firstAttribute="leading" secondItem="1S0-ON-0fb" secondAttribute="leading" id="QWz-jj-ShM"/>
                             <constraint firstItem="1Zv-7a-mwu" firstAttribute="top" secondItem="Fmh-YS-wPP" secondAttribute="bottom" constant="4" id="SBV-ec-mIj"/>
                             <constraint firstItem="Awq-Fk-3RF" firstAttribute="trailing" secondItem="1S0-ON-0fb" secondAttribute="trailing" id="Sqo-gB-HTp"/>
@@ -588,10 +594,12 @@
                             <constraint firstItem="Fmh-YS-wPP" firstAttribute="centerY" secondItem="Awq-Fk-3RF" secondAttribute="centerY" id="aJy-KR-Jn0"/>
                             <constraint firstItem="cqv-sO-6zK" firstAttribute="centerX" secondItem="1S0-ON-0fb" secondAttribute="centerX" id="bfY-zx-Xnf"/>
                             <constraint firstItem="Fmh-YS-wPP" firstAttribute="top" secondItem="1S0-ON-0fb" secondAttribute="bottom" constant="12" id="c1i-J3-GMW"/>
+                            <constraint firstItem="oNw-fm-bJ9" firstAttribute="leading" secondItem="21o-bw-RmJ" secondAttribute="leading" id="eLw-BP-CEF"/>
                             <constraint firstItem="cqv-sO-6zK" firstAttribute="top" secondItem="Ze6-fF-UVs" secondAttribute="bottom" constant="4" id="edl-eF-FG1"/>
                             <constraint firstItem="Fmh-YS-wPP" firstAttribute="trailing" secondItem="7cO-4G-TOT" secondAttribute="trailing" id="fk3-RM-RSM"/>
                             <constraint firstItem="Fmh-YS-wPP" firstAttribute="leading" secondItem="7cO-4G-TOT" secondAttribute="leading" id="o5v-NX-iP7"/>
                             <constraint firstItem="Awq-Fk-3RF" firstAttribute="leading" secondItem="1S0-ON-0fb" secondAttribute="leading" id="pVM-G2-laP"/>
+                            <constraint firstItem="oNw-fm-bJ9" firstAttribute="trailing" secondItem="21o-bw-RmJ" secondAttribute="trailing" id="piX-Qb-Ojl"/>
                             <constraint firstItem="1S0-ON-0fb" firstAttribute="leading" secondItem="Bfw-57-uh7" secondAttribute="leadingMargin" constant="4" id="pmu-Ie-2Mv"/>
                             <constraint firstItem="Ze6-fF-UVs" firstAttribute="top" secondItem="7w7-s7-OTa" secondAttribute="bottom" constant="9" id="pwV-kS-ECf"/>
                             <constraint firstItem="Fmh-YS-wPP" firstAttribute="top" secondItem="7cO-4G-TOT" secondAttribute="bottom" constant="3" id="qgv-yv-s7F"/>
@@ -953,6 +961,7 @@
         <image name="default" width="389" height="734"/>
         <image name="dish_labelBackground" width="512" height="256"/>
         <image name="first" width="30" height="30"/>
+        <image name="mapPlaceholder" width="537" height="406"/>
         <image name="stethoscope" width="512" height="512"/>
     </resources>
 </document>
