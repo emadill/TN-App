@@ -17,14 +17,16 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var TNShareButtonStyle: UIButton!
     @IBOutlet weak var homeScrollView: UIScrollView!
     @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var chartLabel: UILabel!
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var newsImageLabelBackground: UIImageView!
+    // Turn off automatically refresh view for subview
+    // Avoids annoying building w every keystroke
     @IBOutlet weak var graphViewBackground: homeGraphView!
-    
+    @IBOutlet weak var seeScoresButtonStyle: UIButton!
     
     var labelsToBeStyled = [UILabel]()
-
+    var buttonsToBeStyled = [UIButton]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,20 +34,23 @@ class HomeViewController: UIViewController {
         homeScrollView.contentSize.height = 1000
         
         labelsToBeStyled.append(welcomeLabel)
-        labelsToBeStyled.append(chartLabel)
         labelsToBeStyled.append(newsLabel)
+        
+        buttonsToBeStyled.append(checkHistoryButtonStyle)
+        buttonsToBeStyled.append(recordNewEventButtonStyle)
+        buttonsToBeStyled.append(TNShareButtonStyle)
+        buttonsToBeStyled.append(seeScoresButtonStyle)
         
         for label in labelsToBeStyled {
             label.layer.cornerRadius = 5.0
             label.clipsToBounds = true
         }
         
-        checkHistoryButtonStyle.layer.cornerRadius = 5.0
-        checkHistoryButtonStyle.clipsToBounds = true
-        recordNewEventButtonStyle.layer.cornerRadius = 5.0
-        recordNewEventButtonStyle.clipsToBounds = true
-        TNShareButtonStyle.layer.cornerRadius = 5.0
-        TNShareButtonStyle.clipsToBounds = true
+        for button in buttonsToBeStyled {
+            button.layer.cornerRadius = 5.0
+            button.clipsToBounds = true
+        }
+        
         newsImageLabelBackground.layer.cornerRadius = 5.0
         newsImageLabelBackground.clipsToBounds = true
         graphViewBackground.layer.cornerRadius = 5.0

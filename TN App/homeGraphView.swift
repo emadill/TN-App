@@ -13,8 +13,10 @@ import UIKit
     var sampleDatapoints: [Int] = [3, 6, 7, 9, 9, 5, 4]
     
     // Set color gradient, make it interactable with the storyboard
-    @IBInspectable var startColorGradient: UIColor = UIColor(red: 250, green: 233, blue: 222, alpha: 1.0)
-    @IBInspectable var endColorGradient: UIColor = UIColor(red: 252, green: 79, blue: 8, alpha: 1.0)
+    var startColorGradient: UIColor = UIColor(red: 250, green: 233, blue: 222, alpha: 1.0)
+    var endColorGradient: UIColor = UIColor(red: 252, green: 79, blue: 8, alpha: 1.0)
+    // Test if draw is working
+    //@IBInspectable var endColorGradient: UIColor = UIColor(red: 0, green: 9, blue: 8, alpha: 1.0)
     
     override func drawRect(rect: CGRect) {
         
@@ -31,6 +33,7 @@ import UIKit
         // Zero in x end gradient creates horizontal gradient
         let endGradientPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
         CGContextDrawLinearGradient(context, gradient, startGradientPoint, endGradientPoint, [])
+        CGContextStrokePath(context)
         
         // Graph sample data
         
