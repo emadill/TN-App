@@ -17,6 +17,7 @@ import UIKit
     @IBInspectable var endColorGradient: UIColor = UIColor(red: 252, green: 79, blue: 8, alpha: 1.0)
     
     override func drawRect(rect: CGRect) {
+        
         // set context for drawing the gradient
         let context = UIGraphicsGetCurrentContext()
         let colorsForGradient = [startColorGradient.CGColor, endColorGradient.CGColor]
@@ -27,7 +28,8 @@ import UIKit
         let gradient = CGGradientCreateWithColors(colorSpace, colorsForGradient, colorLocations)
         
         let startGradientPoint = CGPoint.zero
-        let endGradientPoint = CGPoint(x: 0.0, y: self.bounds.maxY)
+        // Zero in x end gradient creates horizontal gradient
+        let endGradientPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
         CGContextDrawLinearGradient(context, gradient, startGradientPoint, endGradientPoint, [])
         
         // Graph sample data
@@ -35,8 +37,8 @@ import UIKit
         //IMPORTANT: add if statement to check for data once sampleDatapoints are replaced
         
         // Set x axis margin to 10% of frame width
-        let margin: CGFloat = self.frame.width / 10.0
-        let spacingBetweenPoints = (self.frame.width - margin*2 - 4) / CGFloat(sampleDatapoints.count - 1)
+        let margin: CGFloat = self.bounds.width / 10.0
+        let spacingBetweenPoints = (self.bounds.width - margin*2 - 4) / CGFloat(sampleDatapoints.count - 1)
         // Add expression to calculate code for each column's x point (multiply by spacer and add margin)
         func columnsXPoint(column: Int) {
             var xPoint = CGFloat(column) * spacingBetweenPoints
@@ -45,9 +47,9 @@ import UIKit
         
         //Calculate Y points
         // set y axis boarder to 10% of frame height
-        let topBoarder:CGFloat = self.frame.height / 10.0
-        let bottomBoarder: CGFloat = self.frame.height - topBoarder
-        let dataSpaceHeight = self.frame.height - (topBoarder*2)
+        let topBoarder:CGFloat = self.bounds.height / 10.0
+        let bottomBoarder: CGFloat = self.bounds.height - topBoarder
+        let dataSpaceHeight = self.bounds.height - (topBoarder*2)
         // Downcasting here only because we are using sample points
         let maxYValue = CGFloat(sampleDatapoints.maxElement()!)
         func columnsYPoint(samplePoint: Int) {
@@ -73,6 +75,7 @@ import UIKit
         }
         
         graphPath.stroke()
+
     }
 
 }
