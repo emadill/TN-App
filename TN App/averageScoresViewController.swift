@@ -16,6 +16,8 @@ class averageScoresViewController: UIViewController {
     var percentEyePain = 0.0
     var percentCheekPain = 0.0
     var percentJawPain = 0.0
+    var currentDate = NSDate()
+    var episodesPerDay = 0.0
     
     @IBOutlet weak var episodesBackgroundLabel: UILabel!
     @IBOutlet weak var averageScoreBackgroundLabel: UILabel!
@@ -46,12 +48,23 @@ class averageScoresViewController: UIViewController {
         }
         
         getHistory()
-        calculateAverages()
+        // Avoid calling divisions, etc. if no data available
+        if entriesHistory.count > 0 {
+            calculateAverages()
+            calculateEpisodesPerDay()
         
-        averageScoreLabel.text = averageScoreLabel.text! + String(format: "%.2f", averagePainScore)
-        eyePainLabel.text = eyePainLabel.text! + String(format: "%.2f", percentEyePain)
-        cheekPainLabel.text = cheekPainLabel.text! + String(format: "%.2f", percentCheekPain)
-        jawPainLabel.text = jawPainLabel.text! + String(format: "%.2f", percentJawPain)
+            averageScoreLabel.text = averageScoreLabel.text! + String(format: "%.2f", averagePainScore)
+            eyePainLabel.text = eyePainLabel.text! + String(format: "%.2f", percentEyePain)
+            cheekPainLabel.text = cheekPainLabel.text! + String(format: "%.2f", percentCheekPain)
+            jawPainLabel.text = jawPainLabel.text! + String(format: "%.2f", percentJawPain)
+            episodesLabel.text = episodesLabel.text! + String(format: "%.2f", episodesPerDay)
+        } else {
+            averageScoreLabel.text = averageScoreLabel.text! + "N/A"
+            episodesLabel.text = episodesLabel.text! + "N/A"
+            eyePainLabel.text = eyePainLabel.text! + "N/A"
+            cheekPainLabel.text = cheekPainLabel.text! + "N/A"
+            jawPainLabel.text = jawPainLabel.text! + "N/A"
+        }
         
     }
 
@@ -66,6 +79,8 @@ class averageScoresViewController: UIViewController {
         let context_CD = appDelegate_CD.managedObjectContext
         
         let request_CD = NSFetchRequest(entityName: "PainHistory")
+        let timestampSort = NSSortDescriptor(key: "timestamp_CD", ascending: true)
+        request_CD.sortDescriptors = [timestampSort]
         
         do {
             entriesHistory = try context_CD.executeFetchRequest(request_CD) as! [NSManagedObject]
@@ -80,7 +95,7 @@ class averageScoresViewController: UIViewController {
         var cheekPainScore = 0
         var jawPainScore = 0
         
-        for entry in 1..<entriesHistory.count {
+        for entry in 0..<entriesHistory.count {
             sumOfScores += entriesHistory[entry].valueForKey("painScore_CD") as! Int
             eyePainScore += entriesHistory[entry].valueForKey("earPain_CD") as! Int
             cheekPainScore += entriesHistory[entry].valueForKey("cheekPain_CD") as! Int
@@ -93,6 +108,20 @@ class averageScoresViewController: UIViewController {
         percentCheekPain = Double(cheekPainScore) / totalEntries
         percentJawPain = Double(jawPainScore) / totalEntries
         
+    }
+    
+    func calculateEpisodesPerDay() {
+        let dateFormatter = NSDateFormatter()
+        let calendar = NSCalendar.currentCalendar()
+        let calendarUnit: NSCalendarUnit = .Day
+        let startDateString = entriesHistory[0].valueForKey("timestamp_CD") as! String
+        // Important -- Have to tell formatter what the string looks like
+        dateFormatter.dateFormat = "MMMM dd, yyyy -- h:mm a"
+        let startDateCalendarValue = dateFormatter.dateFromString(startDateString)!
+        
+        let daysFromFirstEntry = calendar.components(calendarUnit, fromDate: startDateCalendarValue, toDate: currentDate, options: []).day
+        // Add 1 to days from first entry to make set inclusive
+        episodesPerDay = Double(entriesHistory.count) / Double(daysFromFirstEntry + 1)
     }
 
     /*
